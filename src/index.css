@@ -1,0 +1,58 @@
+﻿:root {
+  --color-background: #f2f4f8;
+  --color-surface: #ffffff;
+  --color-surface-elevated: #f8f9fa;
+  --color-surface-highlight: #e9ecef;
+  --color-text-primary: #1a1a1a;
+  --color-text-secondary: #6c757d;
+  --color-text-tertiary: #adb5bd;
+  --color-accent-blue: #0066cc;
+  --color-accent-green: #28a745;
+  --color-accent-orange: #fd7e14;
+  --color-accent-red: #dc3545;
+  --color-border: #dee2e6;
+  --color-border-light: #e9ecef;
+  --color-glass: rgba(255, 255, 255, 0.8);
+  --color-glass-border: rgba(255, 255, 255, 0.2);
+  --border-radius: 16px;
+  --border-radius-sm: 12px;
+  --border-radius-lg: 20px;
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', 'Segoe UI', Roboto, sans-serif;
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
+  --shadow-glass: 0 8px 32px rgba(0, 0, 0, 0.08);
+}
+
+body {
+  font-family: var(--font-family);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: var(--color-background);
+  color: var(--color-text-primary);
+  min-height: 100vh;
+}
+
+/* Стили скроллбара */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-tertiary);
+}

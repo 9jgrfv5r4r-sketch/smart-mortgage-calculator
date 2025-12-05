@@ -1,0 +1,10 @@
+{
+  "name": "SMART MORTGAGE",
+  "short_name": "MortgageCalc",
+  "description": "Умный ипотечный калькулятор",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0066cc",
+  "icons": []
+}

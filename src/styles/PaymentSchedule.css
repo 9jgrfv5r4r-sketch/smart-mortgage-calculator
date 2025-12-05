@@ -1,0 +1,427 @@
+.payment-schedule {
+  background: var(--color-surface);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: var(--spacing-lg);
+}
+
+.schedule-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-md);
+  padding-bottom: var(--spacing-md);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.schedule-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.schedule-controls {
+  display: flex;
+  gap: var(--spacing-xs);
+  background: var(--color-surface-elevated);
+  border-radius: var(--border-radius-sm);
+  padding: var(--spacing-xs);
+}
+
+.view-btn {
+  padding: var(--spacing-xs) var(--spacing-md);
+  background: transparent;
+  border: none;
+  border-radius: var(--border-radius-sm);
+  color: var(--color-text-secondary);
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.view-btn:hover {
+  background: var(--color-surface-highlight);
+  color: var(--color-text-primary);
+}
+
+.view-btn.active {
+  background: var(--color-surface);
+  color: var(--color-text-primary);
+  box-shadow: var(--shadow-sm);
+}
+
+.year-selector {
+  margin-bottom: var(--spacing-md);
+}
+
+.year-label {
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  margin-bottom: var(--spacing-sm);
+}
+
+.year-buttons {
+  display: flex;
+  gap: var(--spacing-sm);
+  flex-wrap: wrap;
+}
+
+.year-btn {
+  padding: var(--spacing-xs) var(--spacing-md);
+  background: var(--color-surface-elevated);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-sm);
+  color: var(--color-text-secondary);
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.year-btn:hover {
+  background: var(--color-surface-highlight);
+  border-color: var(--color-text-tertiary);
+  color: var(--color-text-primary);
+}
+
+.year-btn.active {
+  background: var(--color-accent-blue);
+  border-color: var(--color-accent-blue);
+  color: white;
+}
+
+.year-dropdown {
+  padding: var(--spacing-xs) var(--spacing-md);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-sm);
+  color: var(--color-text-primary);
+  font-size: 0.85rem;
+  cursor: pointer;
+  margin-left: var(--spacing-sm);
+}
+
+.year-dropdown:focus {
+  outline: none;
+  border-color: var(--color-accent-blue);
+}
+
+/* Компактная сводка года */
+.year-summary-compact {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-lg);
+  padding: var(--spacing-md);
+  background: var(--color-surface-elevated);
+  border-radius: var(--border-radius-sm);
+  border: 1px solid var(--color-border);
+}
+
+.summary-card-compact {
+  text-align: center;
+}
+
+.summary-label-compact {
+  font-size: 0.75rem;
+  color: var(--color-text-secondary);
+  margin-bottom: var(--spacing-xs);
+  white-space: nowrap;
+}
+
+.summary-value-compact {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+.summary-value-compact.accent {
+  color: var(--color-accent-orange);
+}
+
+/* Компактная таблица */
+.schedule-table-compact {
+  flex: 1;
+  overflow-x: auto;
+  margin-bottom: var(--spacing-md);
+}
+
+.table-header-compact {
+  display: grid;
+  grid-template-columns: 60px repeat(4, 1fr);
+  gap: var(--spacing-md);
+  padding: var(--spacing-sm) 0;
+  border-bottom: 1px solid var(--color-border);
+  position: sticky;
+  top: 0;
+  background: var(--color-surface);
+  z-index: 1;
+  min-width: 500px;
+}
+
+.table-cell-header {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  text-align: right;
+}
+
+.table-cell-header:first-child {
+  text-align: left;
+}
+
+.table-body-compact {
+  min-width: 500px;
+}
+
+.table-row-compact {
+  display: grid;
+  grid-template-columns: 60px repeat(4, 1fr);
+  gap: var(--spacing-md);
+  padding: var(--spacing-sm) 0;
+  border-bottom: 1px solid var(--color-border-light);
+  transition: all 0.2s ease;
+}
+
+.table-row-compact:hover {
+  background: var(--color-surface-highlight);
+}
+
+.table-cell-compact {
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--color-text-primary);
+  text-align: right;
+  white-space: nowrap;
+}
+
+.table-cell-compact:first-child {
+  text-align: left;
+  font-weight: 500;
+}
+
+.table-cell-compact.accent {
+  color: var(--color-accent-orange);
+  font-weight: 500;
+}
+
+/* Компактный график */
+.schedule-chart-compact {
+  flex: 1;
+  margin-bottom: var(--spacing-md);
+}
+
+.chart-container-compact {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--spacing-xs);
+  padding-bottom: var(--spacing-md);
+  border-bottom: 1px solid var(--color-border);
+  min-height: 150px;
+  margin-bottom: var(--spacing-md);
+}
+
+.chart-bar-group-compact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  gap: var(--spacing-xs);
+}
+
+.chart-bar-label-compact {
+  font-size: 0.7rem;
+  color: var(--color-text-tertiary);
+}
+
+.chart-bars-compact {
+  width: 100%;
+  height: 120px;
+  position: relative;
+  background: var(--color-surface-elevated);
+  border-radius: var(--border-radius-sm);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+}
+
+.chart-bar-compact {
+  position: absolute;
+  left: 0;
+  right: 0;
+  border-radius: var(--border-radius-sm);
+  transition: height 0.3s ease, bottom 0.3s ease;
+}
+
+.chart-bar-compact.principal {
+  background: var(--color-accent-blue);
+  z-index: 2;
+}
+
+.chart-bar-compact.interest {
+  background: var(--color-accent-orange);
+  z-index: 1;
+}
+
+.chart-total-compact {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  text-align: center;
+  margin-top: var(--spacing-xs);
+}
+
+.chart-legend-compact {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-lg);
+  padding: var(--spacing-md) 0;
+  margin-bottom: var(--spacing-md);
+}
+
+.legend-item-compact {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  font-size: 0.8rem;
+  color: var(--color-text-secondary);
+}
+
+.legend-color-compact {
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+}
+
+.legend-color-compact.principal {
+  background: var(--color-accent-blue);
+}
+
+.legend-color-compact.interest {
+  background: var(--color-accent-orange);
+}
+
+/* Компактный футер */
+.schedule-footer-compact {
+  padding: var(--spacing-md) 0;
+  border-top: 1px solid var(--color-border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
+}
+
+.trend-info-compact {
+  display: flex;
+  gap: var(--spacing-lg);
+  flex-wrap: wrap;
+}
+
+.trend-item-compact {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.trend-label-compact {
+  font-size: 0.8rem;
+  color: var(--color-text-secondary);
+}
+
+.trend-value-compact {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.export-btn-compact {
+  padding: var(--spacing-sm) var(--spacing-md);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-sm);
+  color: var(--color-text-primary);
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.export-btn-compact:hover {
+  background: var(--color-surface-highlight);
+  border-color: var(--color-accent-blue);
+  color: var(--color-accent-blue);
+}
+
+.empty-schedule {
+  padding: var(--spacing-xl);
+  text-align: center;
+  color: var(--color-text-secondary);
+  font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+  .year-summary-compact {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-sm);
+  }
+  
+  .trend-info-compact {
+    flex-direction: column;
+    gap: var(--spacing-md);
+  }
+  
+  .schedule-footer-compact {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .export-btn-compact {
+    width: 100%;
+  }
+  
+  .chart-container-compact {
+    flex-direction: column;
+    align-items: stretch;
+    min-height: 200px;
+  }
+  
+  .chart-bar-group-compact {
+    margin-bottom: var(--spacing-md);
+  }
+}
+/* Мобильная адаптация для графика платежей */
+@media (max-width: 768px) {
+  .payment-schedule {
+    padding: var(--spacing-md);
+  }
+  
+  .year-summary-compact {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-sm);
+  }
+  
+  .schedule-table-compact {
+    font-size: 0.85rem;
+  }
+  
+  .table-cell-compact {
+    padding: 4px 2px;
+  }
+  
+  .chart-container-compact {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+  
+  .chart-bar-group-compact {
+    width: 30px;
+  }
+}
