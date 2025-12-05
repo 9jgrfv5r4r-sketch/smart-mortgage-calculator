@@ -7,10 +7,27 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
-*.local
+# Dependencies
+node_modules/
+/.pnp
+.pnp.js
+
+# Build outputs
+dist/
+dist-ssr/
+*.tsbuildinfo
+.next/
+.nuxt/
+out/
+build/
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env.*.local
 
 # Editor directories and files
 .vscode/*
@@ -22,3 +39,27 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# OS generated files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Testing
+coverage/
+.nyc_output
+
+# Debugger
+.vscode/
+.idea/
+
+# Optional
+*.tmp
+*.temp
+.cache/
+.parcel-cache/
+
+# IDE
+*.swp
+*~
+.~lock.*
